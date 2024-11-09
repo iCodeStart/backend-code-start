@@ -24,9 +24,8 @@ const appendToGoogleSheet = async (data: string[]): Promise<void> => {
 
   try {
     await sheets.spreadsheets.values.append(request);
-    return
   } catch (err) {
-    return
+    throw err
   }
 };
 
