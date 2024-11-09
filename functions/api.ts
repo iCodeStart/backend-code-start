@@ -1,9 +1,11 @@
 import express, { Request, Response } from "express";
 import serverless from "serverless-http";
+import cors from "cors";
 import { appendToGoogleSheet } from "./sheetHandler";
 
 const app = express();
 const router = express.Router();
+app.use(cors());
 app.use(express.json());
 
 router.post("/sendData", async (req: Request, res: Response) => {
